@@ -1,0 +1,172 @@
+{
+  "season": 2026,
+  "week": 1,
+  "team_predictions": [
+    {
+      "matchup": "NE @ SEA",
+      "spread_line": 3.0,
+      "model_home_win_prob": 0.501,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 19,
+      "predicted_home_score": 22,
+      "final": true,
+      "actual_home_score": 13,
+      "actual_away_score": 10,
+      "model_correct": true
+    },
+    {
+      "matchup": "SF @ LA",
+      "spread_line": 3.5,
+      "model_home_win_prob": 0.667,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 23,
+      "predicted_home_score": 27,
+      "final": true,
+      "actual_home_score": 7,
+      "actual_away_score": 27,
+      "model_correct": false
+    },
+    {
+      "matchup": "CHI @ CAR",
+      "spread_line": -3.0,
+      "model_home_win_prob": 0.413,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 25,
+      "predicted_home_score": 23,
+      "final": false
+    },
+    {
+      "matchup": "TB @ CIN",
+      "spread_line": 3.5,
+      "model_home_win_prob": 0.685,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 24,
+      "predicted_home_score": 29,
+      "final": false
+    },
+    {
+      "matchup": "NO @ DET",
+      "spread_line": 7.0,
+      "model_home_win_prob": 0.688,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 21,
+      "predicted_home_score": 28,
+      "final": false
+    },
+    {
+      "matchup": "BUF @ HOU",
+      "spread_line": -1.5,
+      "model_home_win_prob": 0.553,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 23,
+      "predicted_home_score": 24,
+      "final": false
+    },
+    {
+      "matchup": "BAL @ IND",
+      "spread_line": -3.5,
+      "model_home_win_prob": 0.249,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 26,
+      "predicted_home_score": 18,
+      "final": false
+    },
+    {
+      "matchup": "CLE @ JAX",
+      "spread_line": 8.5,
+      "model_home_win_prob": 0.84,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 15,
+      "predicted_home_score": 29,
+      "final": false
+    },
+    {
+      "matchup": "ATL @ PIT",
+      "spread_line": 5.5,
+      "model_home_win_prob": 0.682,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 18,
+      "predicted_home_score": 24,
+      "final": false
+    },
+    {
+      "matchup": "NYJ @ TEN",
+      "spread_line": 1.5,
+      "model_home_win_prob": 0.326,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 21,
+      "predicted_home_score": 20,
+      "final": false
+    },
+    {
+      "matchup": "ARI @ LAC",
+      "spread_line": 9.5,
+      "model_home_win_prob": 0.803,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 19,
+      "predicted_home_score": 29,
+      "final": false
+    },
+    {
+      "matchup": "MIA @ LV",
+      "spread_line": 3.0,
+      "model_home_win_prob": 0.501,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 21,
+      "predicted_home_score": 22,
+      "final": false
+    },
+    {
+      "matchup": "GB @ MIN",
+      "spread_line": 1.5,
+      "model_home_win_prob": 0.471,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 22,
+      "predicted_home_score": 21,
+      "final": false
+    },
+    {
+      "matchup": "WAS @ PHI",
+      "spread_line": 6.0,
+      "model_home_win_prob": 0.642,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 20,
+      "predicted_home_score": 26,
+      "final": false
+    },
+    {
+      "matchup": "DAL @ NYG",
+      "spread_line": -3.0,
+      "model_home_win_prob": 0.372,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 26,
+      "predicted_home_score": 23,
+      "final": false
+    },
+    {
+      "matchup": "DEN @ KC",
+      "spread_line": 2.5,
+      "model_home_win_prob": 0.513,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "predicted_away_score": 21,
+      "predicted_home_score": 23,
+      "final": false
+    }
+  ]
+}
