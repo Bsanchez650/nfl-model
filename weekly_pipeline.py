@@ -20,6 +20,7 @@ from build_dataset import (
     load_games, build_team_game_log, add_rolling_form,
     add_qb_continuity_features, add_weather_features,
 )
+from key_starter_feature import key_starter_injury_report, key_starter_out_flag
 
 SCORE_FEATURES = [
     "home_avg_pts_for_L5", "home_avg_pts_against_L5", "home_avg_margin_L5",
@@ -150,6 +151,25 @@ def get_upcoming_team_predictions(season: int, week: int):
             "weather_source": row.get("weather_source", "unknown"),
             "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
         }
+
+        # Key-starter injury flags: informational only, NOT fed into the model's
+        # prediction above. We can't backtest this against history (no historical
+        # injury data available), so it's surfaced alongside the model's number
+        # rather than baked into it -- the person reading the dashboard can weigh
+        # it themselves. If the live ESPN lookup fails for any reason (network,
+        # endpoint change, rate limit), fall back to "unknown" rather than
+        # breaking the whole weekly run.
+        for side, team_col in [("home", "home_team"), ("away", "away_team")]:
+            team_abbr = row[team_col]
+            try:
+                concerns = key_starter_injury_report(team_abbr)
+                entry[f"{side}_key_starter_out"] = key_starter_out_flag(team_abbr)
+                entry[f"{side}_injury_concerns"] = concerns
+            except Exception as e:
+                entry[f"{side}_key_starter_out"] = None
+                entry[f"{side}_injury_concerns"] = []
+                print(f"WARNING: injury lookup failed for {team_abbr} ({e})")
+
         if pred_score:
             entry["predicted_away_score"] = pred_score[1]
             entry["predicted_home_score"] = pred_score[0]
