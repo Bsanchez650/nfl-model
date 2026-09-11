@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NFL Model Dashboard</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --line: #e1e4e9;
+    --text: #131518;
+    --muted: #6b7280;
+    --accent: #d0021b;
+    --warn: #9a6b00;
+    --warn-bg: #fdf6e3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    padding: 24px 16px 80px;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  h1 span { color: var(--accent); }
+
+  .controls { display: flex; gap: 6px; align-items: center; }
+  .controls input {
+    width: 58px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 6px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .controls button {
+    background: var(--text);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .controls button:hover { opacity: 0.85; }
+
+  .track-record {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .track-record .acc { color: var(--text); font-weight: 800; }
+
+  .disclaimer {
+    font-size: 12px;
+    color: var(--warn);
+    background: var(--warn-bg);
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .status { color: var(--muted); font-size: 14px; padding: 20px 0; }
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 20px;
+    font-size: 14px;
+    background: var(--card);
+    border-radius: 10px;
+    border: 1px solid var(--line);
+  }
+
+  .game {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .game-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .team-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+  .team-row + .team-row { border-top: 1px solid #f0f1f3; }
+
+  .badge {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; color: #fff;
+    flex-shrink: 0;
+  }
+  .team-name { font-weight: 700; font-size: 15px; flex: 1; }
+  .pred-score {
+    font-size: 22px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    min-width: 34px;
+    text-align: right;
+  }
+  .favored-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    background: #f0f1f3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+
+  .prob-bar-wrap { padding: 10px 14px 12px; }
+  .prob-bar-track {
+    height: 6px;
+    border-radius: 999px;
+    overflow: hidden;
+    display: flex;
+    background: #eee;
+  }
+  .prob-seg { height: 100%; }
+  .prob-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+    font-weight: 600;
+  }
+
+  .final-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .final-tag.correct { background: #dcfce7; color: #15803d; }
+  .final-tag.incorrect { background: #fee2e2; color: #b91c1c; }
+
+  .pred-note {
+    font-size: 11px;
+    color: var(--muted);
+    padding: 0 14px 10px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>NFL <span>Model</span> Predictions</h1>
+    <div class="controls">
+      <input type="number" id="season" value="2026">
+      <input type="number" id="week" value="1" min="1" max="22">
+      <button onclick="loadWeek()">Load</button>
+    </div>
+  </header>
+
+  <div id="track-record" class="track-record"></div>
+  <div class="disclaimer" id="disclaimer" style="display:none;"></div>
+  <div id="content"><div class="status">Loading…</div></div>
+</div>
+
+<script>
+// When running locally: "http://localhost:8000"
+// After deploying to Render: replace with your API's Render URL,
+// e.g. "https://nfl-model-api.onrender.com" (no trailing slash)
+const API_BASE = "https://nfl-model-api-3ek0.onrender.com";
+
+// Primary team colors -- used for badges and the win-probability split bar,
+// the same visual language ESPN's own gamecast win-probability bar uses.
+const TEAM_COLORS = {
+  ARI:"#97233F", ATL:"#A71930", BAL:"#241773", BUF:"#00338D", CAR:"#0085CA",
+  CHI:"#0B162A", CIN:"#FB4F14", CLE:"#311D00", DAL:"#041E42", DEN:"#FB4F14",
+  DET:"#0076B6", GB:"#203731", HOU:"#03202F", IND:"#002C5F", JAX:"#101820",
+  KC:"#E31837", LA:"#003594", LAC:"#0080C6", LV:"#000000", MIA:"#008E97",
+  MIN:"#4F2683", NE:"#002244", NO:"#D3BC8D", NYG:"#0B2265", NYJ:"#125740",
+  PHI:"#004C54", PIT:"#FFB612", SEA:"#002244", SF:"#AA0000", TB:"#D50A0A",
+  TEN:"#0C2340", WAS:"#5A1414",
+};
+function teamColor(abbr) { return TEAM_COLORS[abbr] || "#555"; }
+
+function teamRow(abbr, score, isFavored, spreadAbs) {
+  return `
+    <div class="team-row">
+      <div class="badge" style="background:${teamColor(abbr)}">${abbr}</div>
+      <div class="team-name">${abbr}${isFavored ? `<span class="favored-tag">FAV -${spreadAbs}</span>` : ""}</div>
+      <div class="pred-score">${score !== undefined ? score : "--"}</div>
+    </div>
+  `;
+}function probBar(homeProb, homeAbbr, awayAbbr) {
+  const homePct = Math.round(homeProb * 100);
+  const awayPct = 100 - homePct;
+  return `
+    <div class="prob-bar-wrap">
+      <div class="prob-bar-track">
+        <div class="prob-seg" style="width:${awayPct}%; background:${teamColor(awayAbbr)}"></div>
+        <div class="prob-seg" style="width:${homePct}%; background:${teamColor(homeAbbr)}"></div>
+      </div>
+      <div class="prob-labels">
+        <span>${awayAbbr} ${awayPct}%</span>
+        <span>${homeAbbr} ${homePct}%</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderGames(data) {
+  const content = document.getElementById("content");
+  const disclaimerEl = document.getElementById("disclaimer");
+
+  if (data.disclaimer) {
+    disclaimerEl.style.display = "block";
+    disclaimerEl.textContent = data.disclaimer;
+  }
+
+  if (!data.games || data.games.length === 0) {
+    content.innerHTML = `<div class="empty">No games found for that week.</div>`;
+    return;
+  }
+
+  content.innerHTML = data.games.map(g => {
+    const [away, home] = g.matchup.split(" @ ");
+    const homeFavored = g.spread_line > 0;
+    const spreadAbs = Math.abs(g.spread_line);
+
+    if (g.final) {
+      const tagClass = g.model_correct ? "correct" : "incorrect";
+      const tagText = g.model_correct ? "✓ MODEL RIGHT" : "✗ MODEL WRONG";
+      return `
+        <div class="game">
+          <div class="game-meta">
+            <span>${away} @ ${home}</span>
+            <span class="final-tag ${tagClass}">${tagText}</span>
+          </div>
+          ${teamRow(away, g.actual_away_score, !homeFavored, spreadAbs)}
+          ${teamRow(home, g.actual_home_score, homeFavored, spreadAbs)}
+          <div class="pred-note">Model had predicted: ${away} ${g.predicted_away_score ?? "--"} - ${g.predicted_home_score ?? "--"} ${home} (${Math.round(g.model_home_win_prob*100)}% ${home})</div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="game">
+        <div class="game-meta">
+          <span>${away} @ ${home}</span>
+          <span>PREDICTED</span>
+        </div>
+        ${teamRow(away, g.predicted_away_score, !homeFavored, spreadAbs)}
+        ${teamRow(home, g.predicted_home_score, homeFavored, spreadAbs)}
+        ${probBar(g.model_home_win_prob, home, away)}
+      </div>
+    `;
+  }).join("");
+}
+
+async function loadWeek() {
+  const season = document.getElementById("season").value;
+  const week = document.getElementById("week").value;
+  const content = document.getElementById("content");
+  content.innerHTML = `<div class="status">Loading Week ${week}, ${season}…</div>`;
+
+  try {
+    const resp = await fetch(`${API_BASE}/predictions/${season}/${week}`);
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      content.innerHTML = `<div class="empty">${err.detail || "No data for that week yet."}</div>`;
+      return;
+    }
+    const data = await resp.json();
+    renderGames(data);
+  } catch (e) {
+    content.innerHTML = `<div class="empty">
+      Can't reach the API at ${API_BASE}.<br>
+      Make sure <code>uvicorn api:app --reload --port 8000</code> is running.
+    </div>`;
+  }
+  loadTrackRecord();
+}
+
+async function loadTrackRecord() {
+  try {
+    const resp = await fetch(`${API_BASE}/track_record`);
+    const data = await resp.json();
+    const el = document.getElementById("track-record");
+    if (data.season_accuracy === null || data.season_accuracy === undefined) {
+      el.textContent = "No graded predictions yet — check back after some games finish.";
+    } else {
+      el.innerHTML = `Season accuracy: <span class="acc">${(data.season_accuracy * 100).toFixed(0)}%</span> (${data.total_graded} games graded)`;
+    }
+  } catch (e) {
+    document.getElementById("track-record").textContent = "";
+  }
+}
+
+loadWeek();
+
+// Auto-refresh every 10 minutes so the dashboard stays current without manual reloads
+// (useful alongside a scheduled weekly_pipeline.py run and an always-on server).
+setInterval(loadWeek, 10 * 60 * 1000);
+</script>
+</body>
+</html>

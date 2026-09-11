@@ -1,0 +1,9 @@
+pandas
+numpy
+appdirs
+fastparquet
+requests
+xgboost
+scikit-learn
+fastapi
+uvicorn

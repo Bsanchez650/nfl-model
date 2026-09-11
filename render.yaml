@@ -1,0 +1,18 @@
+# Render Blueprint -- deploys both the API and the dashboard together.
+# In Render: New -> Blueprint -> connect your GitHub repo -> it reads this file automatically.
+services:
+  - type: web
+    name: nfl-model-api
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt && pip install --no-deps nfl_data_py"
+    startCommand: "uvicorn api:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+  - type: web
+    name: nfl-model-dashboard
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
