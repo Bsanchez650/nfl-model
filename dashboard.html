@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NFL Model Dashboard</title>
 <style>
   :root {
@@ -174,6 +175,15 @@
     color: var(--muted);
     padding: 0 14px 10px;
   }
+
+  @media (max-width: 420px) {
+    body { padding: 16px 10px 60px; }
+    h1 { font-size: 17px; }
+    .controls input { width: 48px; padding: 5px 6px; }
+    .controls button { padding: 6px 10px; font-size: 12px; }
+    .team-name { font-size: 14px; }
+    .pred-score { font-size: 19px; }
+  }
 </style>
 </head>
 <body>
@@ -193,7 +203,10 @@
 </div>
 
 <script>
-const API_BASE = "http://localhost:8000";
+// When running locally: "http://localhost:8000"
+// After deploying to Render: replace with your API's Render URL,
+// e.g. "https://nfl-model-api.onrender.com" (no trailing slash)
+const API_BASE = "https://nfl-model-api-3ek0.onrender.com";
 
 // Primary team colors -- used for badges and the win-probability split bar,
 // the same visual language ESPN's own gamecast win-probability bar uses.
@@ -322,6 +335,10 @@ async function loadTrackRecord() {
 }
 
 loadWeek();
+
+// Auto-refresh every 10 minutes so the dashboard stays current without manual reloads
+// (useful alongside a scheduled weekly_pipeline.py run and an always-on server).
+setInterval(loadWeek, 10 * 60 * 1000);
 </script>
 </body>
 </html>
