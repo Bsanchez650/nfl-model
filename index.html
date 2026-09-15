@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NFL Model Dashboard</title>
 <style>
   :root {
@@ -142,6 +143,17 @@
     margin-left: 6px;
   }
 
+  .injury-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    cursor: help;
+  }
+
   .prob-bar-wrap { padding: 10px 14px 12px; }
   .prob-bar-track {
     height: 6px;
@@ -173,6 +185,15 @@
     font-size: 11px;
     color: var(--muted);
     padding: 0 14px 10px;
+  }
+
+  @media (max-width: 420px) {
+    body { padding: 16px 10px 60px; }
+    h1 { font-size: 17px; }
+    .controls input { width: 48px; padding: 5px 6px; }
+    .controls button { padding: 6px 10px; font-size: 12px; }
+    .team-name { font-size: 14px; }
+    .pred-score { font-size: 19px; }
   }
 </style>
 </head>
@@ -211,11 +232,15 @@ const TEAM_COLORS = {
 };
 function teamColor(abbr) { return TEAM_COLORS[abbr] || "#555"; }
 
-function teamRow(abbr, score, isFavored, spreadAbs) {
+function teamRow(abbr, score, isFavored, spreadAbs, injuryConcerns) {
+  const outConcerns = (injuryConcerns || []).filter(c => c.confirmed_out);
+  const injuryBadge = outConcerns.length > 0
+    ? `<span class="injury-tag" title="${outConcerns.map(c => `${c.name} (${c.status})`).join(', ')}">⚠ ${outConcerns.length} KEY OUT</span>`
+    : "";
   return `
     <div class="team-row">
       <div class="badge" style="background:${teamColor(abbr)}">${abbr}</div>
-      <div class="team-name">${abbr}${isFavored ? `<span class="favored-tag">FAV -${spreadAbs}</span>` : ""}</div>
+      <div class="team-name">${abbr}${isFavored ? `<span class="favored-tag">FAV -${spreadAbs}</span>` : ""}${injuryBadge}</div>
       <div class="pred-score">${score !== undefined ? score : "--"}</div>
     </div>
   `;
@@ -264,8 +289,8 @@ function renderGames(data) {
             <span>${away} @ ${home}</span>
             <span class="final-tag ${tagClass}">${tagText}</span>
           </div>
-          ${teamRow(away, g.actual_away_score, !homeFavored, spreadAbs)}
-          ${teamRow(home, g.actual_home_score, homeFavored, spreadAbs)}
+          ${teamRow(away, g.actual_away_score, !homeFavored, spreadAbs, g.away_injury_concerns)}
+          ${teamRow(home, g.actual_home_score, homeFavored, spreadAbs, g.home_injury_concerns)}
           <div class="pred-note">Model had predicted: ${away} ${g.predicted_away_score ?? "--"} - ${g.predicted_home_score ?? "--"} ${home} (${Math.round(g.model_home_win_prob*100)}% ${home})</div>
         </div>
       `;
@@ -277,8 +302,8 @@ function renderGames(data) {
           <span>${away} @ ${home}</span>
           <span>PREDICTED</span>
         </div>
-        ${teamRow(away, g.predicted_away_score, !homeFavored, spreadAbs)}
-        ${teamRow(home, g.predicted_home_score, homeFavored, spreadAbs)}
+        ${teamRow(away, g.predicted_away_score, !homeFavored, spreadAbs, g.away_injury_concerns)}
+        ${teamRow(home, g.predicted_home_score, homeFavored, spreadAbs, g.home_injury_concerns)}
         ${probBar(g.model_home_win_prob, home, away)}
       </div>
     `;
