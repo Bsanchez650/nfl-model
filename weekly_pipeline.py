@@ -16,6 +16,23 @@ import numpy as np
 from xgboost import XGBClassifier, XGBRegressor
 import nfl_data_py as nfl
 
+
+def get_current_season_week(season: int):
+    """
+    Auto-detect the current week: the earliest week that still has at least
+    one game without a final score. Falls back to the last week of the
+    season if every game has been played (offseason).
+    """
+    games = load_games()
+    season_games = games[games["season"] == season].sort_values("week")
+
+    for wk in sorted(season_games["week"].unique()):
+        week_games = season_games[season_games["week"] == wk]
+        if week_games["home_score"].isna().any():
+            return int(wk)
+
+    return int(season_games["week"].max())  # season's over, return last week
+
 from build_dataset import (
     load_games, build_team_game_log, add_rolling_form,
     add_qb_continuity_features, add_weather_features,
@@ -290,7 +307,8 @@ def log_predictions(team_preds, season, week, log_path: str = "predictions_log.j
 
 
 if __name__ == "__main__":
-    SEASON, WEEK = 2026, 1
+    SEASON = 2026
+    WEEK =  get_current_season_week(SEASON)
     team_preds = get_upcoming_team_predictions(SEASON, WEEK)
     print(f"Team predictions for {SEASON} Week {WEEK}: {len(team_preds)} games found")
     for g in team_preds[:5]:
