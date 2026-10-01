@@ -1,195 +1,34 @@
 {
   "season": 2026,
-  "week": 3,
+  "week": 4,
   "team_predictions": [
     {
-      "matchup": "ATL @ GB",
-      "spread_line": 5.5,
-      "model_home_win_prob": 0.513,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 1,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr2",
-          "name": "Jayden Reed",
-          "status": "Doubtful",
-          "confirmed_out": true
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 21,
-      "predicted_home_score": 23,
-      "final": false
-    },
-    {
-      "matchup": "LAC @ BUF",
-      "spread_line": 7.0,
-      "model_home_win_prob": 0.738,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr1",
-          "name": "DJ Moore",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 21,
-      "predicted_home_score": 32,
-      "final": false
-    },
-    {
-      "matchup": "CAR @ CLE",
+      "matchup": "PIT @ CLE",
       "spread_line": -2.5,
-      "model_home_win_prob": 0.438,
+      "model_home_win_prob": 0.35,
       "weather_source": "fallback_no_forecast",
       "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
       "home_key_starter_out": 0,
       "home_injury_concerns": [],
       "away_key_starter_out": 0,
       "away_injury_concerns": [],
-      "predicted_away_score": 23,
-      "predicted_home_score": 22,
-      "final": false
-    },
-    {
-      "matchup": "NYJ @ DET",
-      "spread_line": 6.5,
-      "model_home_win_prob": 0.687,
-      "weather_source": "dome",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 22,
-      "predicted_home_score": 27,
-      "final": false
-    },
-    {
-      "matchup": "HOU @ IND",
-      "spread_line": -3.0,
-      "model_home_win_prob": 0.384,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 1,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr1",
-          "name": "Alec Pierce",
-          "status": "Doubtful",
-          "confirmed_out": true
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [
-        {
-          "position_slot": "wr1",
-          "name": "Nico Collins",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "predicted_away_score": 24,
-      "predicted_home_score": 20,
-      "final": false
-    },
-    {
-      "matchup": "NE @ JAX",
-      "spread_line": 3.0,
-      "model_home_win_prob": 0.569,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 22,
-      "predicted_home_score": 24,
-      "final": false
-    },
-    {
-      "matchup": "KC @ MIA",
-      "spread_line": -11.5,
-      "model_home_win_prob": 0.165,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr2",
-          "name": "Caleb Douglas",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 29,
-      "predicted_home_score": 16,
-      "final": false
-    },
-    {
-      "matchup": "TEN @ NYG",
-      "spread_line": 2.5,
-      "model_home_win_prob": 0.602,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr1",
-          "name": "Malik Nabers",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 19,
-      "predicted_home_score": 24,
-      "final": false
-    },
-    {
-      "matchup": "CIN @ PIT",
-      "spread_line": -3.5,
-      "model_home_win_prob": 0.33,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [
-        {
-          "position_slot": "wr2",
-          "name": "Michael Pittman Jr.",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 23,
+      "predicted_away_score": 20,
       "predicted_home_score": 21,
       "final": false
     },
     {
-      "matchup": "SEA @ WAS",
-      "spread_line": -7.0,
-      "model_home_win_prob": 0.26,
+      "matchup": "IND @ WAS",
+      "spread_line": -3.5,
+      "model_home_win_prob": 0.395,
       "weather_source": "fallback_no_forecast",
       "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 1,
+      "home_key_starter_out": 0,
       "home_injury_concerns": [
         {
           "position_slot": "qb",
           "name": "Jayden Daniels",
-          "status": "Doubtful",
-          "confirmed_out": true
+          "status": "Questionable",
+          "confirmed_out": false
         },
         {
           "position_slot": "te",
@@ -199,82 +38,25 @@
         }
       ],
       "away_key_starter_out": 0,
-      "away_injury_concerns": [
-        {
-          "position_slot": "qb",
-          "name": "Sam Darnold",
-          "status": "Questionable",
-          "confirmed_out": false
-        },
-        {
-          "position_slot": "rb",
-          "name": "Jadarian Price",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "predicted_away_score": 26,
-      "predicted_home_score": 19,
+      "away_injury_concerns": [],
+      "predicted_away_score": 28,
+      "predicted_home_score": 24,
       "final": false
     },
     {
-      "matchup": "ARI @ SF",
-      "spread_line": 8.5,
-      "model_home_win_prob": 0.805,
+      "matchup": "TEN @ BAL",
+      "spread_line": 11.5,
+      "model_home_win_prob": 0.873,
       "weather_source": "fallback_no_forecast",
       "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 1,
+      "home_key_starter_out": 0,
       "home_injury_concerns": [
         {
-          "position_slot": "wr1",
-          "name": "Mike Evans",
+          "position_slot": "qb",
+          "name": "Lamar Jackson",
           "status": "Questionable",
           "confirmed_out": false
         },
-        {
-          "position_slot": "wr3",
-          "name": "Demarcus Robinson",
-          "status": "Out",
-          "confirmed_out": true
-        }
-      ],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [],
-      "predicted_away_score": 18,
-      "predicted_home_score": 30,
-      "final": false
-    },
-    {
-      "matchup": "MIN @ TB",
-      "spread_line": -1.5,
-      "model_home_win_prob": 0.544,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [
-        {
-          "position_slot": "wr3",
-          "name": "Jauan Jennings",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "predicted_away_score": 22,
-      "predicted_home_score": 21,
-      "final": false
-    },
-    {
-      "matchup": "BAL @ DAL",
-      "spread_line": -3.5,
-      "model_home_win_prob": 0.349,
-      "weather_source": "fallback_no_forecast",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [],
-      "away_key_starter_out": 0,
-      "away_injury_concerns": [
         {
           "position_slot": "wr1",
           "name": "Zay Flowers",
@@ -282,75 +64,50 @@
           "confirmed_out": false
         }
       ],
-      "predicted_away_score": 29,
-      "predicted_home_score": 28,
-      "final": false
-    },
-    {
-      "matchup": "LV @ NO",
-      "spread_line": 3.0,
-      "model_home_win_prob": 0.683,
-      "weather_source": "dome",
-      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
-      "home_key_starter_out": 0,
-      "home_injury_concerns": [],
       "away_key_starter_out": 0,
       "away_injury_concerns": [
         {
-          "position_slot": "te",
-          "name": "Brock Bowers",
+          "position_slot": "rb",
+          "name": "Tony Pollard",
           "status": "Questionable",
           "confirmed_out": false
         }
       ],
-      "predicted_away_score": 20,
-      "predicted_home_score": 25,
+      "predicted_away_score": 16,
+      "predicted_home_score": 26,
       "final": false
     },
     {
-      "matchup": "LA @ DEN",
-      "spread_line": -2.5,
-      "model_home_win_prob": 0.418,
+      "matchup": "NE @ BUF",
+      "spread_line": 6.5,
+      "model_home_win_prob": 0.758,
       "weather_source": "fallback_no_forecast",
       "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
       "home_key_starter_out": 0,
       "home_injury_concerns": [
         {
-          "position_slot": "rb",
-          "name": "J.K. Dobbins",
+          "position_slot": "wr1",
+          "name": "DJ Moore",
           "status": "Questionable",
           "confirmed_out": false
         },
         {
           "position_slot": "wr3",
-          "name": "Marvin Mims Jr.",
+          "name": "Keon Coleman",
           "status": "Questionable",
           "confirmed_out": false
         }
       ],
       "away_key_starter_out": 0,
-      "away_injury_concerns": [
-        {
-          "position_slot": "wr1",
-          "name": "Puka Nacua",
-          "status": "Questionable",
-          "confirmed_out": false
-        },
-        {
-          "position_slot": "wr3",
-          "name": "Jordan Whittington",
-          "status": "Questionable",
-          "confirmed_out": false
-        }
-      ],
-      "predicted_away_score": 24,
-      "predicted_home_score": 22,
+      "away_injury_concerns": [],
+      "predicted_away_score": 20,
+      "predicted_home_score": 29,
       "final": false
     },
     {
-      "matchup": "PHI @ CHI",
-      "spread_line": -4.5,
-      "model_home_win_prob": 0.344,
+      "matchup": "NYJ @ CHI",
+      "spread_line": 3.5,
+      "model_home_win_prob": 0.615,
       "weather_source": "fallback_no_forecast",
       "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
       "home_key_starter_out": 1,
@@ -366,7 +123,101 @@
       "away_injury_concerns": [
         {
           "position_slot": "rb",
-          "name": "Saquon Barkley",
+          "name": "Breece Hall",
+          "status": "Doubtful",
+          "confirmed_out": true
+        },
+        {
+          "position_slot": "wr2",
+          "name": "Adonai Mitchell",
+          "status": "Doubtful",
+          "confirmed_out": true
+        },
+        {
+          "position_slot": "te",
+          "name": "Kenyon Sadiq",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "predicted_away_score": 20,
+      "predicted_home_score": 23,
+      "final": false
+    },
+    {
+      "matchup": "JAX @ CIN",
+      "spread_line": 2.5,
+      "model_home_win_prob": 0.565,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 1,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr3",
+          "name": "Colbie Young",
+          "status": "Out",
+          "confirmed_out": true
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [
+        {
+          "position_slot": "wr2",
+          "name": "Jakobi Meyers",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "predicted_away_score": 26,
+      "predicted_home_score": 29,
+      "final": false
+    },
+    {
+      "matchup": "DAL @ HOU",
+      "spread_line": 3.0,
+      "model_home_win_prob": 0.569,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "Nico Collins",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 23,
+      "predicted_home_score": 26,
+      "final": false
+    },
+    {
+      "matchup": "ARI @ NYG",
+      "spread_line": -2.5,
+      "model_home_win_prob": 0.467,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 24,
+      "predicted_home_score": 22,
+      "final": false
+    },
+    {
+      "matchup": "LA @ PHI",
+      "spread_line": -3.0,
+      "model_home_win_prob": 0.423,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 1,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "DeVonta Smith",
           "status": "Questionable",
           "confirmed_out": false
         },
@@ -377,8 +228,219 @@
           "confirmed_out": true
         }
       ],
-      "predicted_away_score": 21,
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "Puka Nacua",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "te",
+          "name": "Colby Parkinson",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "predicted_away_score": 24,
+      "predicted_home_score": 21,
+      "final": false
+    },
+    {
+      "matchup": "GB @ TB",
+      "spread_line": -3.5,
+      "model_home_win_prob": 0.429,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 1,
+      "home_injury_concerns": [
+        {
+          "position_slot": "qb",
+          "name": "Baker Mayfield",
+          "status": "Out",
+          "confirmed_out": true
+        },
+        {
+          "position_slot": "rb",
+          "name": "Bucky Irving",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "wr2",
+          "name": "Chris Godwin Jr.",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 20,
       "predicted_home_score": 19,
+      "final": false
+    },
+    {
+      "matchup": "MIA @ MIN",
+      "spread_line": 10.5,
+      "model_home_win_prob": 0.854,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "Justin Jefferson",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [
+        {
+          "position_slot": "rb",
+          "name": "Jaylen Wright",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "wr2",
+          "name": "Caleb Douglas",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "wr3",
+          "name": "Chris Bell",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "predicted_away_score": 14,
+      "predicted_home_score": 27,
+      "final": false
+    },
+    {
+      "matchup": "KC @ LV",
+      "spread_line": -4.5,
+      "model_home_win_prob": 0.444,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 26,
+      "predicted_home_score": 23,
+      "final": false
+    },
+    {
+      "matchup": "LAC @ SEA",
+      "spread_line": 7.0,
+      "model_home_win_prob": 0.725,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [
+        {
+          "position_slot": "rb",
+          "name": "Jadarian Price",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "away_key_starter_out": 1,
+      "away_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "Ladd McConkey",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "te",
+          "name": "Charlie Kolar",
+          "status": "Doubtful",
+          "confirmed_out": true
+        }
+      ],
+      "predicted_away_score": 19,
+      "predicted_home_score": 26,
+      "final": false
+    },
+    {
+      "matchup": "DEN @ SF",
+      "spread_line": 3.0,
+      "model_home_win_prob": 0.555,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 0,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr1",
+          "name": "Mike Evans",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "wr3",
+          "name": "KhaDarel Hodge",
+          "status": "Questionable",
+          "confirmed_out": false
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 23,
+      "predicted_home_score": 26,
+      "final": false
+    },
+    {
+      "matchup": "DET @ CAR",
+      "spread_line": -3.5,
+      "model_home_win_prob": 0.416,
+      "weather_source": "fallback_no_forecast",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 1,
+      "home_injury_concerns": [
+        {
+          "position_slot": "wr2",
+          "name": "Jalen Coker",
+          "status": "Questionable",
+          "confirmed_out": false
+        },
+        {
+          "position_slot": "wr3",
+          "name": "Xavier Legette",
+          "status": "Doubtful",
+          "confirmed_out": true
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 27,
+      "predicted_home_score": 26,
+      "final": false
+    },
+    {
+      "matchup": "ATL @ NO",
+      "spread_line": 2.5,
+      "model_home_win_prob": 0.533,
+      "weather_source": "dome",
+      "note": "Model tends to AGREE with the market here, not beat it -- see backtest.",
+      "home_key_starter_out": 1,
+      "home_injury_concerns": [
+        {
+          "position_slot": "rb",
+          "name": "Travis Etienne Jr.",
+          "status": "Out",
+          "confirmed_out": true
+        }
+      ],
+      "away_key_starter_out": 0,
+      "away_injury_concerns": [],
+      "predicted_away_score": 24,
+      "predicted_home_score": 25,
       "final": false
     }
   ]
