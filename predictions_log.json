@@ -710,9 +710,9 @@
     "away_team": "TB",
     "spread_line": 8.5,
     "model_home_win_prob": 0.779,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "TB 24 - 16 DAL",
+    "correct": false
   },
   {
     "season": 2026,
@@ -721,9 +721,9 @@
     "away_team": "PHI",
     "spread_line": 7.0,
     "model_home_win_prob": 0.742,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": true,
+    "actual_score": "PHI 17 - 19 JAX",
+    "correct": true
   },
   {
     "season": 2026,
@@ -732,9 +732,9 @@
     "away_team": "CHI",
     "spread_line": -3.0,
     "model_home_win_prob": 0.477,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": true,
+    "actual_score": "CHI 7 - 31 GB",
+    "correct": false
   },
   {
     "season": 2026,
@@ -743,9 +743,9 @@
     "away_team": "CIN",
     "spread_line": -7.0,
     "model_home_win_prob": 0.341,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "CIN 31 - 24 MIA",
+    "correct": true
   },
   {
     "season": 2026,
@@ -754,9 +754,9 @@
     "away_team": "LV",
     "spread_line": 3.5,
     "model_home_win_prob": 0.703,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": true,
+    "actual_score": "LV 17 - 45 NE",
+    "correct": true
   },
   {
     "season": 2026,
@@ -765,9 +765,9 @@
     "away_team": "MIN",
     "spread_line": -1.5,
     "model_home_win_prob": 0.538,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "MIN 23 - 13 NO",
+    "correct": false
   },
   {
     "season": 2026,
@@ -776,9 +776,9 @@
     "away_team": "CLE",
     "spread_line": 2.5,
     "model_home_win_prob": 0.557,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": true,
+    "actual_score": "CLE 12 - 17 NYJ",
+    "correct": true
   },
   {
     "season": 2026,
@@ -787,9 +787,9 @@
     "away_team": "IND",
     "spread_line": 2.5,
     "model_home_win_prob": 0.542,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": true,
+    "actual_score": "IND 22 - 34 PIT",
+    "correct": true
   },
   {
     "season": 2026,
@@ -798,9 +798,9 @@
     "away_team": "HOU",
     "spread_line": -7.5,
     "model_home_win_prob": 0.305,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "HOU 26 - 3 TEN",
+    "correct": true
   },
   {
     "season": 2026,
@@ -809,9 +809,9 @@
     "away_team": "NYG",
     "spread_line": 3.5,
     "model_home_win_prob": 0.713,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "NYG 27 - 27 WAS",
+    "correct": false
   },
   {
     "season": 2026,
@@ -820,9 +820,9 @@
     "away_team": "DEN",
     "spread_line": -3.5,
     "model_home_win_prob": 0.316,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "DEN 23 - 17 LAC",
+    "correct": true
   },
   {
     "season": 2026,
@@ -831,9 +831,9 @@
     "away_team": "DET",
     "spread_line": -4.5,
     "model_home_win_prob": 0.263,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "DET 45 - 21 ARI",
+    "correct": true
   },
   {
     "season": 2026,
@@ -842,9 +842,9 @@
     "away_team": "SF",
     "spread_line": 2.5,
     "model_home_win_prob": 0.495,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "SF 32 - 29 SEA",
+    "correct": true
   },
   {
     "season": 2026,
@@ -853,9 +853,9 @@
     "away_team": "BAL",
     "spread_line": 3.5,
     "model_home_win_prob": 0.636,
-    "actual_home_win": null,
-    "actual_score": null,
-    "correct": null
+    "actual_home_win": false,
+    "actual_score": "BAL 30 - 23 ATL",
+    "correct": false
   },
   {
     "season": 2026,
@@ -864,6 +864,160 @@
     "away_team": "BUF",
     "spread_line": 3.0,
     "model_home_win_prob": 0.607,
+    "actual_home_win": false,
+    "actual_score": "BUF 37 - 34 LA",
+    "correct": false
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "DEN",
+    "away_team": "SEA",
+    "spread_line": -2.5,
+    "model_home_win_prob": 0.4,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "JAX",
+    "away_team": "HOU",
+    "spread_line": 3.0,
+    "model_home_win_prob": 0.549,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "ATL",
+    "away_team": "CHI",
+    "spread_line": -3.0,
+    "model_home_win_prob": 0.495,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "CLE",
+    "away_team": "BAL",
+    "spread_line": -4.5,
+    "model_home_win_prob": 0.332,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "IND",
+    "away_team": "TEN",
+    "spread_line": 7.0,
+    "model_home_win_prob": 0.737,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "NE",
+    "away_team": "NYJ",
+    "spread_line": 7.5,
+    "model_home_win_prob": 0.791,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "NYG",
+    "away_team": "NO",
+    "spread_line": -1.5,
+    "model_home_win_prob": 0.426,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "PHI",
+    "away_team": "CAR",
+    "spread_line": 1.5,
+    "model_home_win_prob": 0.484,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "TB",
+    "away_team": "PIT",
+    "spread_line": -2.5,
+    "model_home_win_prob": 0.354,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "LA",
+    "away_team": "ARI",
+    "spread_line": 12.5,
+    "model_home_win_prob": 0.824,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "KC",
+    "away_team": "LAC",
+    "spread_line": 8.5,
+    "model_home_win_prob": 0.795,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "LV",
+    "away_team": "BUF",
+    "spread_line": -5.5,
+    "model_home_win_prob": 0.253,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "GB",
+    "away_team": "DAL",
+    "spread_line": 1.5,
+    "model_home_win_prob": 0.479,
+    "actual_home_win": null,
+    "actual_score": null,
+    "correct": null
+  },
+  {
+    "season": 2026,
+    "week": 6,
+    "home_team": "SF",
+    "away_team": "WAS",
+    "spread_line": 7.5,
+    "model_home_win_prob": 0.779,
     "actual_home_win": null,
     "actual_score": null,
     "correct": null
